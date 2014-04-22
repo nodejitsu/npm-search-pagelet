@@ -1,0 +1,35 @@
+{
+  "name": "npm-search-pagelet",
+  "version": "0.0.0",
+  "description": "Search for packages",
+  "main": "index.js",
+  "dependencies": {
+    "expirable": "0.1.x",
+    "pagelet": "0.3.x",
+    "request": "2.34.x",
+    "triecomplete": "0.0.x"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nodejitsu/npm-search-pagelet.git"
+  },
+  "keywords": [
+    "search",
+    "packages",
+    "package",
+    "module",
+    "npm",
+    "registry",
+    "npm-registry",
+    "npmjs"
+  ],
+  "author": "Arnout Kazemier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nodejitsu/npm-search-pagelet/issues"
+  },
+  "homepage": "https://github.com/nodejitsu/npm-search-pagelet"
+}
