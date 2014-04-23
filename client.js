@@ -59,4 +59,6 @@ pipe.on('search::render', function render(pagelet) {
       }
     }
   });
+
+  select[0].selectize.focus();
 });
