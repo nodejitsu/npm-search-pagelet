@@ -1,7 +1,18 @@
 pipe.on('search::render', function render(pagelet) {
   'use strict';
 
-  $(pagelet.placeholders).find('select[name="search"]').selectize({
+  var placeholders = $(pagelet.placeholders);
+
+  placeholders.find('button[type="submit"]').click(function click(e) {
+    e.preventDefault();
+
+    var value = select.val();
+    if (!value) return;
+
+    window.location = '/package/'+ select.val();
+  });
+
+  var select = placeholders.find('select[name="search"]').selectize({
     valueField: 'name',
     labelField: 'name',
     searchField: 'name',
