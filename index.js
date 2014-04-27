@@ -204,3 +204,10 @@ Pagelet.extend({
     });
   }
 }).on(module);
+
+//
+// Pre-heat the cache>
+//
+module.exports.prototype.recache.bind(module.exports.prototype)(function cached() {
+  // Nothing important here.
+});
