@@ -3,14 +3,22 @@ pipe.on('search::render', function render(pagelet) {
 
   var placeholders = $(pagelet.placeholders);
 
-  placeholders.find('button[type="submit"]').click(function click(e) {
-    e.preventDefault();
+  /**
+   * Bypass the submit functionality and just redirect manually so we don't have
+   * to do a server callback.
+   *
+   * @api private
+   */
+  function redirect(e) {
+    if (e && e.preventDefault) e.preventDefault();
 
     var value = select.val();
     if (!value) return;
 
     window.location = '/package/'+ select.val();
-  });
+  }
+
+  placeholders.find('button[type="submit"]').click(redirect);
 
   var select = placeholders.find('select[name="search"]').selectize({
     valueField: 'name',
@@ -57,6 +65,15 @@ pipe.on('search::render', function render(pagelet) {
       option_create: function create(data, escape) {
         return '';
       }
+    },
+
+    /**
+     * Automatically submit form when item is clicked.
+     *
+     * @api private
+     */
+    onItemAdd: function itemadd() {
+      setTimeout(redirect, 0);
     }
   });
 
