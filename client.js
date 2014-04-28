@@ -18,7 +18,7 @@ pipe.on('search::render', function render(pagelet) {
     window.location = '/package/'+ select.val();
   }
 
-  placeholders.find('button[type="submit"]').click(redirect);
+  placeholders.find('form').submit(redirect);
 
   var select = placeholders.find('select[name="search"]').selectize({
     valueField: 'name',
@@ -50,7 +50,7 @@ pipe.on('search::render', function render(pagelet) {
         return [
           '<div class="completed">',
             '<strong class="name">'+ escape(item.name) +'</strong>',
-            '<span class="description">'+ escape(item.desc) +'</span>',
+           'string' === typeof item.desc ? '<span class="description">'+ escape(item.desc) +'</span>' : '',
           '</div>'
         ].join('');
       },
