@@ -1,6 +1,6 @@
 {
   "name": "npm-search-pagelet",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Search for packages",
   "main": "index.js",
   "dependencies": {
@@ -8,9 +8,6 @@
     "pagelet": "0.3.x",
     "request": "2.34.x",
     "triecomplete": "0.0.x"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
