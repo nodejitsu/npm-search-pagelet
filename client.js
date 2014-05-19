@@ -89,7 +89,9 @@ pipe.on('search:render', function render(pagelet) {
      * @api private
      */
     onItemAdd: function itemadd() {
-      setTimeout(redirect, 0);
+      if (!~(location.hash || '').indexOf('debug')) {
+        setTimeout(redirect, 0);
+      }
     }
   });
 
