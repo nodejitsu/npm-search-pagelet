@@ -1,4 +1,4 @@
-pipe.on('search::render', function render(pagelet) {
+pipe.on('search:render', function render(pagelet) {
   'use strict';
 
   var placeholders = $(pagelet.placeholders);
