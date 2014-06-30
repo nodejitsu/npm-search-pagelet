@@ -1,12 +1,12 @@
 {
   "name": "npm-search-pagelet",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Search for packages",
   "main": "index.js",
   "dependencies": {
     "expirable": "0.1.x",
-    "pagelet": "0.6.x",
-    "request": "2.35.x",
+    "pagelet": "0.7.x",
+    "request": "2.36.x",
     "triecomplete": "0.0.x"
   },
   "repository": {
