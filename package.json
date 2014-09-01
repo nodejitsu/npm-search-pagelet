@@ -4,10 +4,14 @@
   "description": "Search for packages",
   "main": "index.js",
   "dependencies": {
-    "expirable": "0.1.x",
+    "async": "0.9.x",
+    "diagnostics": "0.0.x",
+    "level": "^0.18.0",
     "pagelet": "0.8.x",
-    "request": "2.40.x",
-    "triecomplete": "0.0.x"
+    "which": "1.0.x"
+  },
+  "scripts": {
+    "test": "mocha test/names.test.js"
   },
   "repository": {
     "type": "git",
@@ -28,5 +32,10 @@
   "bugs": {
     "url": "https://github.com/nodejitsu/npm-search-pagelet/issues"
   },
-  "homepage": "https://github.com/nodejitsu/npm-search-pagelet"
+  "homepage": "https://github.com/nodejitsu/npm-search-pagelet",
+  "devDependencies": {
+    "assume": "0.0.x",
+    "mocha": "1.21.x",
+    "pre-commit": "0.0.x"
+  }
 }
