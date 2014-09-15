@@ -102,9 +102,12 @@ request.factory = function factory(cmd, arg, read) {
       else fn(undefined, read ? fs.readFileSync(file, 'utf-8') : Buffer.concat(chunks, size));
 
       //
-      // Clean up all our things.
+      // Clean up all our things, wrap it in a try catch as it could already
+      // have been removed.
       //
-      if (read) fs.unlinkSync(file);
+      if (read) try { fs.unlinkSync(file); }
+      catch (e) {}
+
       chunks.length = size = 0;
     });
   };
