@@ -38,4 +38,6 @@ module.exports = require('npm-search-pagelet').extend({
 });
 ```
 
+You can see a working version of this pagelet on: http://browsenpm.org/
+
 [BigPipe]: https://github.com/bigpipe/bigpipe

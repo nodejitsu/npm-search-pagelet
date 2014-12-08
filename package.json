@@ -1,12 +1,12 @@
 {
   "name": "npm-search-pagelet",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Search for packages",
   "main": "index.js",
   "dependencies": {
     "async": "0.9.x",
     "diagnostics": "0.0.x",
-    "level": "^0.18.0",
+    "level": "0.18.x",
     "pagelet": "0.8.x",
     "which": "1.0.x"
   },
@@ -35,7 +35,7 @@
   "homepage": "https://github.com/nodejitsu/npm-search-pagelet",
   "devDependencies": {
     "assume": "0.0.x",
-    "mocha": "1.21.x",
+    "mocha": "2.0.x",
     "pre-commit": "0.0.x"
   }
 }
