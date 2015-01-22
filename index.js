@@ -9,7 +9,9 @@ Pagelet.extend({
   view: 'view.html',      // HTML template.
   css:  'css.styl',       // Custom CSS.
   js:   'client.js',      // Front-end magic.
-  rpc: ['complete'],      // Expose method as RPC.
+
+  path: '/search',
+  method: 'POST',
 
   //
   // External dependencies that should be included on the page using a regular
@@ -38,17 +40,20 @@ Pagelet.extend({
   level: new Names({ refresh: true }),
 
   /**
-   * [RPC]: Return a list of package names.
+   * Return a list of package names.
    *
-   * @param {Function} reply Send a reply to the client.
-   * @param {String} query The name of package we're searching for.
+   * @param {Object} fields Form fields.
+   * @param {Object} files Form files.
    * @api public
    */
-  complete: function complete(reply, query) {
-    var suffix = this.level.suffix;
+  post: function post(fields, files) {
+    var suffix = this.level.suffix
+      , pagelet = this;
 
-    this.level.find(query, this.max, function found(err, data) {
-      reply(err, data.map(function map(row) {
+    this.level.find(fields.query, this.max, function found(err, data) {
+      if (err) return pagelet.capture(err);
+
+      pagelet.end(data.map(function map(row) {
         return {
           name: row.key,
           desc: row.value !== suffix ? row.value : ''

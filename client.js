@@ -46,10 +46,10 @@ pipe.on('search:render', function render(pagelet) {
     load: function load(query, callback) {
       if (!query.length) return callback();
 
-      pagelet.complete(query, function complete(err, results) {
+      pipe.xhr.post('/search', query, function (err, resp, body) {
         if (err) return callback();
 
-        callback(results);
+        callback(body);
       });
     },
 
