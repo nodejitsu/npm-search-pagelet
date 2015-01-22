@@ -46,7 +46,7 @@ pipe.on('search:render', function render(pagelet) {
     load: function load(query, callback) {
       if (!query.length) return callback();
 
-      pipe.xhr.post('/search', query, function (err, resp, body) {
+      pipe.xhr.post('/search', { query: query }, function (err, resp, body) {
         if (err) return callback();
 
         callback(body);
