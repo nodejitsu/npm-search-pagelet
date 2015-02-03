@@ -40,7 +40,8 @@ Pagelet.extend({
   level: new Names({ refresh: true }),
 
   /**
-   * Return a list of package names.
+   * Return a list of package names. Pagelet.plain is provided by the
+   * XHR plugin and prevents a client-side render.
    *
    * @param {Object} fields Form fields.
    * @param {Object} files Form files.
@@ -53,7 +54,7 @@ Pagelet.extend({
     this.level.find(fields.query, this.max, function found(err, data) {
       if (err) return pagelet.capture(err);
 
-      pagelet.end(data.map(function map(row) {
+      pagelet.plain(data.map(function map(row) {
         return {
           name: row.key,
           desc: row.value !== suffix ? row.value : ''

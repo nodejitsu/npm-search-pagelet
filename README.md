@@ -12,7 +12,9 @@ npm install --save npm-search-pagelet
 ```
 
 Please note that this module should be used together with the [BigPipe]
-framework.
+framework. Additionally, it will require the [BigPipe plugin XHR][plugin]
+for asynchronous calls to the search database. See plugin documentation
+on how to set it up properly.
 
 ## Configuration
 
@@ -41,3 +43,4 @@ module.exports = require('npm-search-pagelet').extend({
 You can see a working version of this pagelet on: http://browsenpm.org/
 
 [BigPipe]: https://github.com/bigpipe/bigpipe
+[plugin]: https://github.com/bigpipe/plugin-xhr
